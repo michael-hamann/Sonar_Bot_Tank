@@ -157,8 +157,8 @@ int checkLeft() {
 
   stop();
 
-  move(1, 200, BACKWARD);
-  move(2, 200, FORWARD);
+  move(LEFT_WHEELS, 200, BACKWARD);
+  move(RIGHT_WHEELS, 200, FORWARD);
 
   delay(500);
 
@@ -174,8 +174,8 @@ int checkLeft() {
 
 int checkRight() {
 
-  move(1, 200, FORWARD);
-  move(2, 200, BACKWARD);
+  move(LEFT_WHEELS, 200, FORWARD);
+  move(RIGHT_WHEELS, 200, BACKWARD);
 
   delay(500);
 
@@ -202,8 +202,8 @@ void origin(char direction) {
 
       // if checkLeft() has been called
 
-      move(1, 200, FORWARD);
-      move(2, 200, BACKWARD);
+      move(LEFT_WHEELS, 200, FORWARD);
+      move(RIGHT_WHEELS, 200, BACKWARD);
 
       delay(500);
 
@@ -215,8 +215,8 @@ void origin(char direction) {
 
       // if checkRight() has been called
 
-      move(1, 200, BACKWARD);
-      move(2, 200, FORWARD);
+      move(LEFT_WHEELS, 200, BACKWARD);
+      move(RIGHT_WHEELS, 200, FORWARD);
 
       delay(500);
 
@@ -265,8 +265,8 @@ void moveLeft() {
 
   delay(1000);
 
-  move(1, 200, BACKWARD);
-  move(2, 200, FORWARD);
+  move(LEFT_WHEELS, 200, BACKWARD);
+  move(RIGHT_WHEELS, 200, FORWARD);
 
   delay(500);
 
@@ -282,8 +282,8 @@ void moveRight() {
 
   delay(1000);
 
-  move(1, 200, FORWARD);
-  move(2, 200, BACKWARD);
+  move(LEFT_WHEELS, 200, FORWARD);
+  move(RIGHT_WHEELS, 200, BACKWARD);
 
   delay(500);
 
@@ -295,8 +295,8 @@ void moveRight() {
 
 void drive() { 
 
-  move(1, 255, FORWARD);
-  move(2, 255, FORWARD);
+  move(LEFT_WHEELS, FULL_SPEED, FORWARD);
+  move(RIGHT_WHEELS, FULL_SPEED, FORWARD);
 
 }
 
@@ -304,8 +304,8 @@ void drive() {
 
 void reverse() {
 
-    move(1, 200, BACKWARD);
-    move(2, 200, BACKWARD);
+    move(LEFT_WHEELS, 200, BACKWARD);
+    move(RIGHT_WHEELS, 200, BACKWARD);
 
     delay(1000);
 
