@@ -56,23 +56,10 @@ int getDistance() {
 
   distance = (duration / 2) / 29.1;
 
-  Serial.println(distance); 
+  Serial.println(distance);
 
   return distance;
 
-  
-
-//  if (distance >= 200 || distance <= 0) {
-//    Serial.println("Out of range");
-//    Serial.println(distance);
-//  }
-//  else {
-//    Serial.print(distance);
-//    Serial.println(" cm");
-//    return distance;
-//  }
-
-//  return -1;
 }
 
 //////////////////////////////////////////////////////
@@ -194,7 +181,7 @@ void origin(char direction) {
   stop();
   delay(1000);
 
-  // check which way it turns first to determine which way to reverse.
+  // Check which way it turns first to determine which way to reverse.
 
   switch (direction) {
 
@@ -221,7 +208,7 @@ void origin(char direction) {
       delay(500);
 
       stop();
-      
+
       break;
 
   }
@@ -247,13 +234,6 @@ char distanceCalculation(int distLeft, int distRight) {
     return 'B';
 
   }
-
-  //else if(distLeft == distRight){
-
-  //return 'B';
-
-  // }
-
 
 }
 
@@ -293,7 +273,7 @@ void moveRight() {
 
 //////////////////////////////////////////////////////
 
-void drive() { 
+void drive() {
 
   move(LEFT_WHEELS, FULL_SPEED, FORWARD);
   move(RIGHT_WHEELS, FULL_SPEED, FORWARD);
@@ -304,12 +284,12 @@ void drive() {
 
 void reverse() {
 
-    move(LEFT_WHEELS, 200, BACKWARD);
-    move(RIGHT_WHEELS, 200, BACKWARD);
+  move(LEFT_WHEELS, 200, BACKWARD);
+  move(RIGHT_WHEELS, 200, BACKWARD);
 
-    delay(1000);
+  delay(1000);
 
-    stop();
+  stop();
 
 }
 
@@ -346,6 +326,3 @@ void stop() {
   //enable standby
   digitalWrite(STBY, LOW);
 }
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// Test 1.0
