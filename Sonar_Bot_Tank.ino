@@ -38,47 +38,17 @@ void setup() {
   pinMode(echoPin, INPUT);
 }
 
-int getDistance() {
-
-  long duration, distance;
-
-  digitalWrite(trigPin, LOW);
-
-  delayMicroseconds(2);
-
-  digitalWrite(trigPin, HIGH);
-
-  delayMicroseconds(10);
-
-  digitalWrite(trigPin, LOW);
-
-  duration = pulseIn(echoPin, HIGH);
-
-  distance = (duration / 2) / 29.1;
-
-  Serial.println(distance);
-
-  return distance;
-
-}
-
-//////////////////////////////////////////////////////
-
 void loop() {
 
   check();
 
 }
 
-//////////////////////////////////////////////////////
-
 void check() {
 
   objectCheck();
 
 }
-
-//////////////////////////////////////////////////////
 
 void objectCheck() {
 
@@ -136,7 +106,29 @@ void objectCheck() {
   }
 }
 
-//////////////////////////////////////////////////////
+int getDistance() {
+
+  long duration, distance;
+
+  digitalWrite(trigPin, LOW);
+
+  delayMicroseconds(2);
+
+  digitalWrite(trigPin, HIGH);
+
+  delayMicroseconds(10);
+
+  digitalWrite(trigPin, LOW);
+
+  duration = pulseIn(echoPin, HIGH);
+
+  distance = (duration / 2) / 29.1;
+
+  Serial.println(distance);
+
+  return distance;
+
+}
 
 int checkLeft() {
 
@@ -157,8 +149,6 @@ int checkLeft() {
 
 }
 
-//////////////////////////////////////////////////////
-
 int checkRight() {
 
   move(LEFT_WHEELS, 200, FORWARD);
@@ -173,8 +163,6 @@ int checkRight() {
   return distRight;
 
 }
-
-//////////////////////////////////////////////////////
 
 void origin(char direction) {
 
@@ -215,8 +203,6 @@ void origin(char direction) {
 
 }
 
-//////////////////////////////////////////////////////
-
 char distanceCalculation(int distLeft, int distRight) {
 
   delay(1000);
@@ -237,8 +223,6 @@ char distanceCalculation(int distLeft, int distRight) {
 
 }
 
-//////////////////////////////////////////////////////
-
 void moveLeft() {
 
   stop();
@@ -253,8 +237,6 @@ void moveLeft() {
   stop();
 
 }
-
-//////////////////////////////////////////////////////
 
 void moveRight() {
 
@@ -271,16 +253,12 @@ void moveRight() {
 
 }
 
-//////////////////////////////////////////////////////
-
 void drive() {
 
   move(LEFT_WHEELS, FULL_SPEED, FORWARD);
   move(RIGHT_WHEELS, FULL_SPEED, FORWARD);
 
 }
-
-/////////////////////////////////////////////////////
 
 void reverse() {
 
@@ -292,8 +270,6 @@ void reverse() {
   stop();
 
 }
-
-//////////////////////////////////////////////////////
 
 void move(int motor, int speed, int direction) {
   //Move specific motor at speed and direction
